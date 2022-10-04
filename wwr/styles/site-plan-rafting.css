@@ -1,0 +1,163 @@
+/* if you are using any Google fonts change the font names below to your fonts. 
+Any spaces in your font name should be replaced with a +. 
+Fonts are separated by a & */
+@import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap");
+
+:root {
+  /* change the values below to your colors from your palette */
+  --primary-color: #5079a5;
+  --secondary-color: #156079;
+  --accent1-color: #7cc6fe;
+  --accent2-color: white;
+
+  /* change the values below to your chosen font(s) */
+  --heading-font: "Gemunu Libre";
+  --paragraph-font: "Gemunu Libre", Helvetica, sans-serif;
+
+  /* these colors below should be chosen from among your palette colors above */
+  --headline-color-on-white: black; /* headlines on a white background */
+  --headline-color-on-color: #c2ecff; /* headlines on a colored background */
+  --paragraph-color-on-white: black; /* paragraph text on a white background */
+  --paragraph-color-on-color: #c2ecff; /* paragraph text on a colored background */
+  --paragraph-background-color: #5079a5;
+  --nav-link-color: #0AAfff;
+  --nav-background-color: #7cc6fe;
+  --nav-hover-link-color: #7cc6fe;
+  --nav-hover-background-color: #156079;
+}
+
+/*  Look around below...but DON'T CHANGE ANYTHING! */
+
+body {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 4em;
+  font-size: 18px;
+  text-align: center;
+}
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var("Gemunu Libre");
+  color: var(#c2ecff);
+}
+h2 {
+  text-align: center;
+}
+hr {
+  height: 3px;
+  margin: 35px 0;
+  background: var(#7cc6fe);
+}
+header {
+  padding: 1em;
+  text-align: center;
+  color: var(#c2ecff);
+  background-color: var(#5079a5);
+}
+header > h1, header > h2 {
+  color: var(#c2ecff);
+}
+p {
+  font-family: var("Gemunu Libre", Helvetica, sans-serif);
+  color: var(black);
+  padding: 1em;
+}
+.colors {
+  width: 100%;
+  min-width: 350px;
+  margin: 30px auto;
+  text-align: center;
+}
+.colors th {
+  background-color: #999;
+}
+.colors td{
+  width: 25%;
+  height: 3em;
+}
+.primary {
+  background-color: var(#5079a5);
+}l
+.secondary {
+  background-color: var(#156079);
+}
+.accent1 {
+  background-color: var(#7cc6fe);
+}
+.accent2{
+  background-color: var(white);
+}
+p.colored {
+  background-color: var(#5079a5);
+  color: var(#c2ecff);
+}
+nav {
+  background-color: var(#7cc6fe);
+  line-height: 3em;
+  text-align: center;
+  font-size: 1.2em;
+}
+nav  {
+  list-style-type: none;
+  display: flex;
+}
+nav a {
+  padding:1em;
+  min-width: 120px;
+  text-decoration: none;
+  padding: 10px;
+}
+nav a:link, nav a:visited {
+  color: var(#0AAfff);
+}
+nav a:hover {
+  color: var(#7cc6fe);
+  background-color: var(#156079);
+}
+.sitemap {
+  display: grid;
+  justify-content: center;
+
+  grid-template-columns: repeat(6, 15%);
+  grid-template-rows: 3em 1.5em 1.5em 3em;
+  grid-template-areas: ". . home home . ."
+    ". . . top . ."
+    ". left left right right ."
+    "page2 page2 . . page3 page3";
+}
+.sitemap > div {
+  text-align: center;
+}
+.sm-home {
+  grid-area: home;
+  background-color: #ccc;
+  line-height: 3em;
+}
+.sm-page2 {
+  grid-area: page2;
+  background-color: #ccc;
+  line-height: 3em;
+}
+.sm-page3 {
+  grid-area: page3;
+  background-color: #ccc;
+  line-height: 3em;
+}
+.top {
+  grid-area: top;
+  border-left: 1px solid;
+}
+.left {
+  grid-area: left;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+.right {
+  grid-area: right;
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
