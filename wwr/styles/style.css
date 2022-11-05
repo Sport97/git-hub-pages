@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap");
+
 #content {
     max-width: 1600px;
     margin: 0 auto;
@@ -7,10 +9,14 @@ nav a {
     text-align: center;
     color: #00141F;
     text-decoration: none;
+    padding: 35px;
 }
 
 .home-title {
     color: #00141F;
+    font-family: "Gemunu Libre", Helvetica, sans-serif;
+    font-size: 2em;
+    margin-top: 10px;
 }
 
 #hero-msg h1 {
@@ -37,7 +43,16 @@ main {
 
 body {
     background-color: #5079a5; 
+    font-family: "Gemunu Libre", Helvetica, sans-serif;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
 }
+
+h2 {
+    margin: 0;
+}
+
 header {
     background-color:#156079;
 }
@@ -50,6 +65,10 @@ nav a:hover {
     background-color: #7cc6fe;
     color: #00141F;
     text-decoration: none;
+    font-size: 18px;
+    padding: 15px 30px;
+    margin-top: 50px;
+    border-radius: 5px;
 }
 
 .book:hover, .join:hover {
@@ -59,19 +78,26 @@ nav a:hover {
 
 .msg {
     background-color: #156079;
+    line-height: 1.5em;
+    padding: 35px;
 }
 
 .msg h2 {
     color: #c2ecff;
+    font-family: "Gemunu Libre", Helvetica, sans-serif;
 }
 
 .msg p {
     color: #c2ecff;
+    font-size: .8em;
+    padding-bottom: 15px;
 }
 
 footer {
     background-color: #156079;
     color: #c2ecff;
+    padding: 25px 50px;
+    margin-top: 200px;
 }
 
 footer p {
@@ -91,10 +117,31 @@ footer a:hover {
     color: #7cc6fe;
 }
 
+footer .social img {
+    padding-top: 15px;
+}
+
 .icon {
     width: 80px;
+    padding-top: 10px;
 }
 
 #hero-img {
     width: 100%;
+}
+
+#logo_link {
+    padding-top: 5px;
+}
+
+.rivers-card, .camping-card, .rapids-card {
+    margin: 200px 0;
+}
+
+.card-img {
+    border: 10px solid #7cc6fe;
+}
+
+main section img {
+    box-sizing: border-box;
 }
