@@ -10,16 +10,17 @@
 <body>
     <div id="content">
         <header>
+            <p id="cdc-top">Count Down Calendar</p>
             <a id="cdc-icon" href="index.html">
                 <img src="images/cdc-icon.png" alt="CDC Icon">
             </a>
             <nav>
-                <a href="full-time-details.html" target="_blank">Full Time Details</a>
                 <a href="index.html"><u>Home</u></a>
+                <a href="full-time-details.html" target="_blank">Full Time Details</a>
                 <a href="specific-date.html" target="specific-date.html">Specific Date</a>
-                <select id="country" name="user-country" required>
-                    <option value="US">US</option>
-                    <option value="AU">AU</option>
+                <select>
+                    <option value="" disabled selected hidden>US</option>
+                    <option value="country">AU</option>
                   </select>
             </nav>
         </header>
@@ -43,5 +44,6 @@
             <p><a href="site-plan.html" target="_blank">Site Plan</a></p>
             <p id="today">Today's Date</p>
         </footer>
+    </div>
 </body>
 </html>

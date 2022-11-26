@@ -11,33 +11,45 @@ body {
     padding: 0;
 }
 header {
-    background-color:#A8D4FF;
+    background-color:#396E94;
     display: grid;
-    grid-template-columns: 150px auto;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#cdc-top {
+    font-family: Rajdhani Bold;
+    color: #A8D4FF;
+    text-align: center;
+    grid-column: 2/3;
+    margin-bottom: -75px;
 }
 #cdc-icon {
+    background-color: #A8D4FF;
     width: 80px;
-    padding-top: 8px;
-    justify-self: center;
-    align-self: center;
+    height: 80px;
+    padding: 8px;
+    grid-column: 1/1;
+    grid-row: 2/2;
+    z-index: 1;
 }
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    grid-column: 1/4;
+    grid-row: 2/2;
 }
 nav a {
-    color: #396E94;
+    color: #A8D4FF;
     text-align: center;
     text-decoration: none;
     padding: 35px;
 }
 nav a:hover {
-    background-color: #396E94;
-    color: #A8D4FF;
+    background-color: #A8D4FF;
+    color: #396E94;
 }
 nav select {
-    background-color:#A8D4FF;
-    color: #396E94;
+    background-color:#396E94;
+    color: #A8D4FF;
     text-align: center;
     padding: 35px;
 }
@@ -65,28 +77,27 @@ nav select {
     grid-template-columns: repeat(5, 1fr);
 }
 footer {
-    background-color:#A8D4FF;
+    background-color:#396E94;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 footer p {
-    color: #396E94;
+    color: #A8D4FF;
     text-align: center;
     text-decoration: none;
     padding: 35px;
 }
-footer p a:hover {
-    text-decoration: underline;
-}
 footer a {
-    color: #396E94;
+    color: #A8D4FF;
     text-align: center;
     text-decoration: none;
     padding: 35px;
 }
 footer a:hover {
+    background-color: #A8D4FF;
     color: #396E94;
+    padding: 35px;
 }
 
 /* CSS full-time-details.html */
@@ -95,7 +106,7 @@ footer a:hover {
     font-family: Rajdhani Medium;
     color: #A8D4FF;
     display: grid;
-    grid-template-columns: (1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     padding: 25px;
 }
 #holiday-list select {
@@ -115,7 +126,7 @@ footer a:hover {
     font-family: Rajdhani Medium;
     color: #A8D4FF;
     display: grid;
-    grid-template-columns: (1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     padding: 25px;
 }
 #specific-date input {
@@ -127,4 +138,45 @@ footer a:hover {
     margin-left: 25%;
     margin-right: 25%;
     text-align: left;
+}
+
+
+@media screen and (max-width: 900px) {
+    #cdc-top {
+        margin-bottom: 10px;
+    }
+    nav {
+        flex-direction: column;
+    }
+    nav a {
+        display: block;
+        padding: 15px;
+    }
+    main {
+        font-size: 25px;
+        padding: 10px;
+    }
+    .main-paragraph {
+        width: auto;
+        height: auto;
+    }
+    #holidays {
+        flex-direction: column;
+    }
+    footer {
+        flex-direction: column;
+        margin-top: 25px;
+    }
+    
+    /* CSS full-time-details.html */
+    
+    #holiday-list {
+        flex-direction: column;
+    }
+    
+    /* CSS for specific-date.html */
+    
+    #specific-date {
+        flex-direction: column;
+    }
 }
