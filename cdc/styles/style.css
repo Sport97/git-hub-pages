@@ -76,6 +76,12 @@ nav select {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
+.holiday-template {
+    display: none;
+}
+.holidayDate {
+    display: none;
+}
 footer {
     background-color:#396E94;
     display: flex;
