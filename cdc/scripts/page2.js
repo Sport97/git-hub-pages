@@ -121,6 +121,11 @@ function changeCountry() { // clears previous entries to allow default country t
     const newUrl = "https://date.nager.at/api/v3/NextPublicHolidays/" + newCountry.innerText;
     for (holiday in changeHoliday) {
         document.getElementById("changeHoliday").innerHTML = "";
+        document.getElementById("minutesUntil").innerHTML = "Minutes: ";
+        document.getElementById("daysUntil").innerHTML = "Days: ";
+        document.getElementById("hoursUntil").innerHTML = "Hours: ";
+        document.getElementById("weeksUntil").innerHTML = "Weeks: ";
+        document.getElementById("monthsUntil").innerHTML = "Months: ";
     }
     const templateHoliday = document.createElement("option");
     templateHoliday.setAttribute("id","templateHoliday");
