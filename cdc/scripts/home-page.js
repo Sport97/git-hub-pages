@@ -5,9 +5,9 @@ document.getElementById("year").innerHTML = "Count Down Calendar &copy; " + year
 let month = currentDate.getMonth() + 1; // makes months list as 1-12, rather than 0-11
 let day = currentDate.getDate();
 let today = year + "-" + month + "-" + day;
-document.getElementById("today").innerHTML = today;
+document.getElementById("today").innerText = today;
 let country = document.getElementById("country");
-document.getElementById("countryHolidays").textContent = country.value + " Holidays"; // defaults to US Holidays
+document.getElementById("countryHolidays").textContent = country.innerText + " Major Holidays"; // defaults to US Holidays
 let holiday = "";
 let calendarList = [];
 let holidayList = [];
@@ -18,7 +18,7 @@ function outputCountry(countries) { // combines the data from the url into usabl
     for (country of countries) {
         const newOption = document.createElement("option");
         newOption.setAttribute("id","country");
-        newOption.innerHTML = country.countryCode
+        newOption.innerText = country.countryCode
         countryCode = country.countryCode
         countryList.push(countryCode)
         document.getElementById("changeCountry").appendChild(newOption)
@@ -60,7 +60,7 @@ function outputHoliday(holidays) { // combines the data from the url into usable
     }
 }
 
-const holidayUrl = "https://date.nager.at/api/v3/PublicHolidays/" + year + "/" + country.value;
+const holidayUrl = "https://date.nager.at/api/v3/NextPublicHolidays/" + country.innerText;
 
 async function getHolidays(holidayUrl) { // fetches url above, then parses data into usable format
     const response = await fetch(holidayUrl);
@@ -74,18 +74,19 @@ async function getHolidays(holidayUrl) { // fetches url above, then parses data 
 getHolidays(holidayUrl); // calls function
 
 let holidayDates = document.querySelectorAll(".holidayDate");
-function daysUntilHoliday() { // determine the time between holidayDate and today's date into usable format that can be calculated
+function daysUntilHoliday() {
+     // determine the time between holidayDate and today's date into usable format that can be calculated
     for (i = 0; i < holidayDates.length; ++i) {
         let minute = 1000 * 60;
         let hour = minute * 60;
         let day = hour * 24;
         let year = day * 365;
-        let thisDate = Date.parse(today)
+        let thisDate = Date.parse(currentDate)
         let convertHolidayDate = Date.parse(holidayDates);
         let time = Math.round(convertHolidayDate / day);
         let days = Math.round(thisDate / day);
         let total = time - days;
-        return total + " Days";
+        return total + " Days Until";
     };
 };
 
@@ -95,8 +96,8 @@ function changeCountry() { // clears previous entries to allow default country t
     dateList.length = 0;
     let newCountry = document.getElementById("country");
     newCountry.textContent = this.value;
-    document.getElementById("countryHolidays").textContent = newCountry.value + " Holidays";
-    const newUrl = "https://date.nager.at/api/v3/PublicHolidays/" + year + "/" + newCountry.value;
+    document.getElementById("countryHolidays").textContent = newCountry.innerText + " Major Holidays";
+    const newUrl = "https://date.nager.at/api/v3/NextPublicHolidays/" + newCountry.innerText;
     for (holiday in holidays) {
         document.getElementById("holidays").innerHTML = "";
     }
